@@ -1,11 +1,11 @@
 import numpy as np
 
 def centering(X):
-    """Centra les dades"""
+    # Centrar les dades
     return X - X.mean(axis=1, keepdims=True)
 
 def whitening(X):
-    """Blanqueig de les dades"""
+    # Blanqueig de les dades
     cov = np.dot(X, X.T) / X.shape[1]
     U, S, _ = np.linalg.svd(cov)
     D = np.diag(1.0 / np.sqrt(S))
@@ -14,9 +14,9 @@ def whitening(X):
     return X_white
 
 def decorrelation(W):
-    """Decorrelació de la matriu de barrejament"""
+    # Decorrelació de la matriu de barrejament (W)
     D, P = np.linalg.eigh(np.dot(W, W.T))
-    return np.dot(np.dot(P, np.diag(1.0 / np.sqrt(D))), P.T)
+    return np.dot(np.dot(P, np.diag(1.0 / np.sqrt(D))), P.T)  # Fa un return de la W
 
 def ica(X, max_iter=1000, tol=1e-5):
     """Implementació de l'algorisme ICA"""
