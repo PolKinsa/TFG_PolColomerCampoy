@@ -1,4 +1,4 @@
-# Desenvolupament d’una plataforma per a l’analisi i generació de partitures musicals a partir d’àudio multipista
+# Desenvolupament d’una plataforma per a l’anàlisi i generació de partitures musicals a partir d’àudio multipista
 Autor: Pol Colomer Campoy
 
 ## Dossier
